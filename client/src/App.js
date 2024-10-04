@@ -1,14 +1,14 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./loginPage.jsx";
-// import verifyOTP from './verifyOTP.jsx';
+import VerifyOTP from "./VerifyOTP.jsx"
 
 function App() {
   return (
     <Router>
       <Routes>
           <Route exact path="/" element={<LoginPage />} />
-          {/* <Route exact path="/verify-otp" element={<VerifyOTP />} /> */}
+          <Route exact path="/verify-otp" element={<VerifyOTP />} />
         </Routes>
     </Router>
   );

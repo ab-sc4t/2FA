@@ -2,15 +2,12 @@ import Sequelize from 'sequelize';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
-// dotenv.config({ path: "../../.env" });
+dotenv.config({ path: "../.env" });
 
-console.log(process.env.DB_PASS);
-
-
-const sequelize = new Sequelize("2fa", "root", "1234", {
-    host: "localhost",
+const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DB_USERNAME, process.env.DB_PASS, {
+    host: process.env.DATABASE_HOST,
     dialect: 'mysql',
     logging: false,
     define: {
